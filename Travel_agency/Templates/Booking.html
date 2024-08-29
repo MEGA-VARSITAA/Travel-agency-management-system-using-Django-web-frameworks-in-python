@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Abc travels booking</title>
+</head>
+<body>
+<h1> Available buses</h1>
+{% for i in buslist %}
+<p>{{i.Busno}}</p>
+<p>{{i.Departure_Time}}</p>
+<p>{{i.Destinations}}</p>
+<p>{{i.Seats_Available}}</p>
+<p>{{i.TicketCosts}}</p>
+{% endfor %}
+<form method="POST">
+{% csrf_token %}
+{{ticket.as_p}}
+<input type="submit" value="Book">
+</form>
+
+</body>
+</html>
